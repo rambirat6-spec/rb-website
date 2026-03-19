@@ -13,13 +13,11 @@ body {
   color: white;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   padding: 15px;
   background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
 }
 
 .logo img {
@@ -36,14 +34,9 @@ header {
   font-weight: bold;
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 60px 20px;
-}
-
-.hero h1 {
-  font-size: 30px;
 }
 
 .btn {
@@ -57,7 +50,6 @@ header {
   font-weight: bold;
 }
 
-/* PRICE */
 .price {
   text-align: center;
   padding: 30px;
@@ -73,7 +65,6 @@ header {
   color: #22c55e;
 }
 
-/* FEATURES */
 .features div {
   background: rgba(255,255,255,0.05);
   margin: 10px;
@@ -81,7 +72,6 @@ header {
   border-radius: 10px;
 }
 
-/* REVIEWS */
 .reviews {
   padding: 20px;
 }
@@ -93,14 +83,12 @@ header {
   border-radius: 10px;
 }
 
-/* TIMER */
 #timer {
   text-align: center;
-  font-size: 20px;
   color: yellow;
+  font-size: 20px;
 }
 
-/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -108,11 +96,8 @@ header {
   background: #22c55e;
   padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
 }
 </style>
-
 </head>
 
 <body>
@@ -125,7 +110,7 @@ header {
 </header>
 
 <section class="hero">
-  <h1>🔥 Apni Shop Ke Liye Professional Website Banwaye</h1>
+  <h1>🔥 24 Hours Me Professional Website Banwaye</h1>
   <p>Kiryana | Jewellery | Medical | Clothes | Mobile</p>
   <a href="https://wa.me/917082575384?text=I want website" class="btn">
     🚀 Get Website Now ₹2999
@@ -149,6 +134,15 @@ header {
   <div>✔ Free Support</div>
 </section>
 
+<!-- 🔥 OUR WORK SECTION -->
+<section style="padding:20px; text-align:center;">
+  <h2>📸 Our Work</h2>
+
+  <img src="https://via.placeholder.com/400x250?text=Website+Demo+1" width="100%" style="margin-top:10px; border-radius:10px;">
+  
+  <img src="https://via.placeholder.com/400x250?text=Website+Demo+2" width="100%" style="margin-top:10px; border-radius:10px;">
+</section>
+
 <section class="reviews">
   <h2>⭐ Customer Reviews</h2>
   <div class="review-box">"Bahut acchi website banayi" – Ravi</div>
@@ -165,7 +159,6 @@ header {
 <a href="https://wa.me/917082575384" class="whatsapp">💬</a>
 
 <script>
-// TIMER
 var time = 86400;
 setInterval(function(){
   var h = Math.floor(time/3600);
