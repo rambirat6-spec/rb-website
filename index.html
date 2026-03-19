@@ -9,33 +9,27 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #000;
+  background: radial-gradient(circle, #001f3f, #000);
   color: #fff;
   text-align: center;
 }
 
 /* Logo */
 .logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 180px;
   margin-top: 40px;
-  animation: spin 6s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg);}
-  100% { transform: rotate(360deg);}
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00cfff;
 }
 
 /* Title */
 h1 {
-  font-size: 32px;
-  margin-top: 20px;
+  font-size: 34px;
+  margin-top: 15px;
 }
 
 .tagline {
-  color: #aaa;
+  color: #ccc;
   margin: 10px;
 }
 
@@ -43,31 +37,39 @@ h1 {
 .btn {
   background: #00cfff;
   color: #000;
-  padding: 12px 25px;
-  border-radius: 25px;
+  padding: 14px 28px;
+  border-radius: 30px;
   text-decoration: none;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00aacc;
 }
 
 /* Contact */
 .contact {
-  margin-top: 10px;
+  margin-top: 15px;
   color: #00ffff;
+  font-size: 18px;
 }
 
 /* Offer Box */
 .offer {
-  background: #111;
+  background: rgba(255,255,255,0.05);
   margin: 30px;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
 }
 
 .timer {
-  font-size: 24px;
+  font-size: 26px;
   color: #00ffcc;
+  margin-top: 10px;
 }
 
 /* WhatsApp Button */
@@ -76,18 +78,19 @@ h1 {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-radius: 50px;
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Logo -->
-<img src="logo.png" class="logo">
+<!-- LOGO (IMPORTANT: same folder me logo.jpg hona chahiye) -->
+<img src="logo.jpg" class="logo">
 
 <h1>RB Website Service</h1>
 <p class="tagline">Apni Shop ko Online lekar jao 🚀</p>
@@ -96,7 +99,7 @@ h1 {
 
 <p class="contact">📞 Call/WhatsApp: 7082575384</p>
 
-<!-- Offer -->
+<!-- OFFER -->
 <div class="offer">
   <h2>🔥 Limited Offer</h2>
   <p class="timer" id="timer">24:00:00</p>
