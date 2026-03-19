@@ -5,123 +5,200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RB Website Service</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle, #001f3f, #000);
-  color: #fff;
-  text-align: center;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background: radial-gradient(circle at top,#000428,#000);
+  color:white;
+  overflow-x:hidden;
 }
+
+/* Background */
+canvas{position:fixed;top:0;left:0;z-index:-1;}
 
 /* Logo */
-.logo {
-  width: 180px;
-  margin-top: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #00cfff;
+.logo{
+  width:90px;
+  display:block;
+  margin:20px auto;
+  animation: float 3s infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
 }
 
-/* Title */
-h1 {
-  font-size: 34px;
-  margin-top: 15px;
+/* Hero */
+.hero{text-align:center;padding:30px;}
+.hero h1{font-size:36px;}
+.hero p{opacity:0.8;margin:10px;}
+
+.btn{
+  padding:15px 35px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#00f0ff,#00ff88);
+  color:black;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 0 25px #00f0ff;
+  transition:0.3s;
+}
+.btn:hover{transform:scale(1.1);}
+
+/* Section */
+.section{padding:50px 20px;text-align:center;}
+
+/* Cards */
+.cards{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:20px;
+}
+.card{
+  width:160px;
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #00f0ff;
 }
 
-.tagline {
-  color: #ccc;
-  margin: 10px;
+/* Pricing */
+.price-box{
+  background:rgba(0,0,0,0.6);
+  padding:25px;
+  margin:20px;
+  border-radius:20px;
+  box-shadow:0 0 25px #00ffcc;
 }
 
-/* Button */
-.btn {
-  background: #00cfff;
-  color: #000;
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  font-weight: bold;
-  transition: 0.3s;
+/* QR */
+.qr{
+  width:200px;
+  margin-top:15px;
+  border-radius:10px;
 }
 
-.btn:hover {
-  background: #00aacc;
-}
+/* Timer */
+.timer{font-size:26px;color:#00ffcc;margin-top:10px;}
 
-/* Contact */
-.contact {
-  margin-top: 15px;
-  color: #00ffff;
-  font-size: 18px;
-}
-
-/* Offer Box */
-.offer {
-  background: rgba(255,255,255,0.05);
-  margin: 30px;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.2);
-}
-
-.timer {
-  font-size: 26px;
-  color: #00ffcc;
-  margin-top: 10px;
-}
-
-/* WhatsApp Button */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 14px 20px;
-  border-radius: 50px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+/* WhatsApp */
+.whatsapp{
+  position:fixed;
+  bottom:20px;right:20px;
+  background:#25D366;
+  padding:15px 20px;
+  border-radius:50px;
+  color:white;text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO (IMPORTANT: same folder me logo.jpg hona chahiye) -->
-<img src="logo.jpg" class="logo">
+<canvas id="bg"></canvas>
 
-<h1>RB Website Service</h1>
-<p class="tagline">Apni Shop ko Online lekar jao 🚀</p>
+<img src="logo.png" class="logo">
 
-<a href="#" class="btn">Start Now</a>
-
-<p class="contact">📞 Call/WhatsApp: 7082575384</p>
-
-<!-- OFFER -->
-<div class="offer">
-  <h2>🔥 Limited Offer</h2>
-  <p class="timer" id="timer">24:00:00</p>
+<div class="hero">
+  <h1>RB Website Service</h1>
+  <p id="typing"></p>
+  <button class="btn" onclick="scrollToContact()">Start Now</button>
+  <p>📞 7082575384</p>
 </div>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/917082575384">Chat</a>
+<div class="section">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card">Kiryana</div>
+    <div class="card">Medical</div>
+    <div class="card">Clothes</div>
+    <div class="card">Jewellery</div>
+    <div class="card">Mobile Shop</div>
+  </div>
+</div>
+
+<div class="price-box">
+  <h2>🔥 Limited Offer</h2>
+  <h3>Website Only ₹199</h3>
+  <div class="timer" id="timer"></div>
+
+  <p>Scan & Pay Now 👇</p>
+  <img src="qr.png" class="qr">
+</div>
+
+<div class="section">
+  <h2>Earn With Us 💸</h2>
+  <p>👉 Refer your friends & earn ₹50 per sale</p>
+  <p>👉 Join WhatsApp for daily leads</p>
+  <a href="https://wa.me/917082575384" class="btn">Join Now</a>
+</div>
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <a href="https://wa.me/917082575384" class="btn">Chat on WhatsApp</a>
+</div>
+
+<a href="https://wa.me/917082575384" class="whatsapp">Chat</a>
 
 <script>
-// Countdown Timer
-let time = 86400;
+// Typing
+const txt="Apni Shop ko Online lekar jao 🚀";
+let i=0;
+function type(){
+  if(i<txt.length){
+    document.getElementById("typing").innerHTML+=txt.charAt(i);
+    i++;
+    setTimeout(type,40);
+  }
+}
+type();
 
-setInterval(() => {
-  let h = Math.floor(time / 3600);
-  let m = Math.floor((time % 3600) / 60);
-  let s = time % 60;
+// Scroll
+function scrollToContact(){
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
 
-  document.getElementById("timer").innerText =
-    h + "h " + m + "m " + s + "s";
+// Timer
+let t=86400;
+setInterval(()=>{
+  let h=Math.floor(t/3600);
+  let m=Math.floor((t%3600)/60);
+  let s=t%60;
+  document.getElementById("timer").innerHTML=h+"h "+m+"m "+s+"s";
+  t--;
+},1000);
 
-  if (time > 0) time--;
-}, 1000);
+// Background animation
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<100;i++){
+  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2});
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="cyan";
+    ctx.fill();
+    p.y+=0.4;
+    if(p.y>canvas.height)p.y=0;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
