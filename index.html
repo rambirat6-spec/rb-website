@@ -12,7 +12,6 @@
 body{
 background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
-text-align:center;
 }
 
 /* HEADER */
@@ -40,24 +39,38 @@ animation:spin 6s linear infinite;
 100%{transform:rotate(360deg);}
 }
 
-.btn{
-background:#22c55e;
-padding:10px 20px;
-border-radius:8px;
-color:white;
-text-decoration:none;
+.phone{
+color:#22c55e;
+font-weight:bold;
 }
 
 /* HERO */
 .hero{
+text-align:center;
 padding:60px 20px;
 }
 
-.hero h1{
-font-size:30px;
+.btn{
+background:#22c55e;
+padding:12px 20px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+transition:0.3s;
 }
 
-/* CARDS */
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* SECTION */
+.section{
+padding:40px 20px;
+text-align:center;
+}
+
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -67,9 +80,25 @@ justify-content:center;
 .card{
 background:#1e293b;
 margin:10px;
-padding:15px;
-border-radius:10px;
-width:150px;
+padding:20px;
+border-radius:12px;
+width:200px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 15px #22c55e;
+}
+
+/* PRICING */
+.price{
+font-size:24px;
+color:#22c55e;
+}
+
+.highlight{
+border:2px solid gold;
 }
 
 /* WHATSAPP */
@@ -85,7 +114,6 @@ text-decoration:none;
 font-size:20px;
 }
 </style>
-
 </head>
 
 <body>
@@ -95,7 +123,7 @@ font-size:20px;
 <img src="logo.png">
 <h3>RB Web Service</h3>
 </div>
-<p>📞 7082575384</p>
+<div class="phone">📞 7082575384</div>
 </header>
 
 <section class="hero">
@@ -104,8 +132,8 @@ font-size:20px;
 <a href="https://wa.me/917082575384" class="btn">Order Now</a>
 </section>
 
-<section>
-<h2>Services</h2>
+<section class="section">
+<h2>Our Services</h2>
 <div class="cards">
 <div class="card">Kiryana</div>
 <div class="card">Medical</div>
@@ -115,15 +143,31 @@ font-size:20px;
 </div>
 </section>
 
-<section>
-<h2>Pricing</h2>
+<section class="section">
+<h2>💰 Pricing</h2>
 <div class="cards">
-<div class="card">₹2999</div>
-<div class="card">₹3999 ⭐</div>
+
+<div class="card">
+<h3>Basic Plan</h3>
+<p class="price">₹2999</p>
+<p>✔ 1 Page Website</p>
+<p>✔ Mobile Friendly</p>
+<p>✔ WhatsApp Button</p>
+</div>
+
+<div class="card highlight">
+<h3>Premium Plan ⭐</h3>
+<p class="price">₹3999</p>
+<p>✔ 3-5 Pages Website</p>
+<p>✔ Fast Loading</p>
+<p>✔ SEO Ready</p>
+<p>✔ WhatsApp + Call Button</p>
+</div>
+
 </div>
 </section>
 
-<footer style="padding:20px;">
+<footer class="section">
 <p>© 2026 RB Web Service</p>
 </footer>
 
