@@ -6,177 +6,159 @@
 <title>RB Web Service</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
-
-body{
-background:linear-gradient(135deg,#000,#0f2027,#2c5364);
-color:#fff;
-text-align:center;
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
 }
 
 /* HEADER */
-header{
-padding:20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #020617;
 }
 
-.logo{
-width:120px;
-animation:spin 6s linear infinite;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
+.logo img {
+  width: 50px;
+  animation: spin 6s linear infinite;
 }
 
-h1{margin-top:10px;font-size:28px;}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.phone {
+  color: #22c55e;
+  font-weight: bold;
+}
 
 /* HERO */
-.hero{
-padding:40px 20px;
+.hero {
+  text-align: center;
+  padding: 50px 20px;
 }
 
-.hero h2{
-color:#00ffcc;
-font-size:26px;
+.hero h1 {
+  font-size: 28px;
 }
 
-.hero p{
-margin-top:10px;
-color:#ccc;
+.hero p {
+  color: #94a3b8;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#00ffcc;
-color:#000;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #22c55e;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.btn:hover{
-background:#fff;
-transform:scale(1.1);
+.btn:hover {
+  background: #16a34a;
 }
 
-/* SERVICES */
-.services{
-padding:40px 20px;
+/* PRICE */
+.price {
+  text-align: center;
+  padding: 30px;
 }
 
-.service-box{
-background:#111;
-margin:15px;
-padding:20px;
-border-radius:15px;
-box-shadow:0 0 15px #00ffcc;
+.old {
+  text-decoration: line-through;
+  color: red;
 }
 
-/* PRICING */
-.pricing{
-padding:40px 20px;
+.new {
+  font-size: 30px;
+  color: #22c55e;
 }
 
-.old{
-text-decoration:line-through;
-color:red;
+/* FEATURES */
+.features {
+  padding: 20px;
 }
 
-.new{
-font-size:40px;
-color:#00ffcc;
+.features div {
+  background: #020617;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-/* FORM */
-.form{
-padding:40px 20px;
-}
-
-input{
-width:80%;
-padding:12px;
-margin:10px;
-border:none;
-border-radius:10px;
-}
-
-.footer{
-padding:20px;
-background:#000;
-color:#aaa;
+/* TRUST */
+.trust {
+  text-align: center;
+  padding: 30px;
 }
 
 /* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
-color:#fff;
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" class="logo">
-<h1>RB Web Service 💻</h1>
+  <div class="logo">
+    <img src="logo.png">
+    <h2>RB Web</h2>
+  </div>
+  <div class="phone">📞 7082575384</div>
 </header>
 
 <section class="hero">
-<h2>Har Business ke liye Website 🚀</h2>
-<p>Kiryana | Medical | Restaurant | Jewellery | Mobile Shop</p>
-<a href="#contact" class="btn">Get Website Now 🔥</a>
+  <h1>🚀 Apni Shop Ke Liye Professional Website Banwaye</h1>
+  <p>Kiryana | Jewellery | Medical | Clothes | Mobile</p>
+  <a href="https://wa.me/917082575384" class="btn">Order Now on WhatsApp</a>
 </section>
 
-<section class="services">
-<h2>🔥 Features</h2>
-<div class="service-box">⚡ Fast Website</div>
-<div class="service-box">📱 Mobile Friendly</div>
-<div class="service-box">💸 Online Payment</div>
-<div class="service-box">🎨 Premium Design</div>
+<section class="price">
+  <p class="old">₹3999</p>
+  <p class="new">₹2999 🔥</p>
+  <p>Limited Time Offer</p>
 </section>
 
-<section class="pricing">
-<h2>💰 Offer</h2>
-<p class="old">₹3999</p>
-<p class="new">₹2999</p>
-<a href="#contact" class="btn">Buy Now 💸</a>
+<section class="features">
+  <div>✔ Mobile Friendly Website</div>
+  <div>✔ Fast Loading Speed</div>
+  <div>✔ WhatsApp Integration</div>
+  <div>✔ Payment System (UPI)</div>
+  <div>✔ Free Support</div>
 </section>
 
-<section class="form" id="contact">
-<h2>📩 Order Now</h2>
-
-<input type="text" placeholder="Your Name"><br>
-<input type="tel" placeholder="Your Phone"><br>
-
-<a href="https://wa.me/917082575384?text=Hello%20I%20want%20website" class="btn">
-WhatsApp Now 💬
-</a>
-
-<br>
-
-<a href="upi://pay?pa=7082575384@paytm&pn=RBWeb&am=2999" class="btn">
-Pay Now 💰
-</a>
-
+<section class="trust">
+  <h2>👥 100+ Customers</h2>
+  <h3>⭐ 5 Star Rating</h3>
+  <p>📞 24/7 Support</p>
 </section>
 
-<div class="footer">
-© 2026 RB Web Service | All Rights Reserved
-</div>
-
-<a class="whatsapp" href="https://wa.me/917082575384">💬</a>
+<a href="https://wa.me/917082575384" class="whatsapp">💬</a>
 
 </body>
 </html>
