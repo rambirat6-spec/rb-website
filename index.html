@@ -8,105 +8,117 @@
 <style>
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a);
-color:white;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:#000;
+color:#fff;
 }
 
 /* HEADER */
 header{
 text-align:center;
-padding:50px 20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+padding:80px 20px;
+background:linear-gradient(180deg,#000,#0a0a0a);
 }
 
 /* LOGO */
 .logo{
-width:120px;
+width:150px;
+height:150px;
 border-radius:50%;
-animation:spin 6s linear infinite;
-box-shadow:0 0 40px #00f0ff;
+object-fit:cover;
+display:block;
+margin:auto;
+animation:spin 10s linear infinite;
+box-shadow:0 0 40px rgba(0,255,255,0.4);
 }
+
 @keyframes spin{
 100%{transform:rotate(360deg);}
 }
 
-/* TYPING */
-.typing{
-color:#00f0ff;
-border-right:2px solid;
+h1{
+font-size:38px;
+margin:20px 0 10px;
 }
 
-/* SLIDER */
-.slider{
-height:200px;
+.tagline{
+font-size:18px;
+color:#aaa;
+}
+
+/* HERO BUTTON */
+.hero-btn{
+margin-top:20px;
+padding:14px 25px;
+background:#00c3ff;
+border-radius:30px;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+}
+
+/* SECTION */
+.section{
+padding:40px 20px;
+text-align:center;
+}
+
+/* CARD */
+.card{
+background:#111;
+padding:25px;
 margin:15px;
 border-radius:20px;
-background:url('https://picsum.photos/800/300?1') center/cover;
-animation:slide 10s infinite;
-}
-@keyframes slide{
-0%{background-image:url('https://picsum.photos/800/300?1');}
-50%{background-image:url('https://picsum.photos/800/300?2');}
-100%{background-image:url('https://picsum.photos/800/300?3');}
-}
-
-/* OFFER */
-.offer{
-background:linear-gradient(135deg,#111,#1e293b);
-margin:20px;
-padding:25px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,255,200,0.3);
-}
-#countdown{
-font-size:28px;
-color:#00ffcc;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:10px;
-padding:20px;
+gap:15px;
 }
-.box{
-background:#1e293b;
-padding:15px;
+
+/* OFFER */
+.offer{
+background:linear-gradient(135deg,#111,#1f2937);
+border-radius:20px;
+padding:30px;
+margin:20px;
+}
+
+#countdown{
+font-size:28px;
+color:#00ffcc;
+}
+
+/* BUTTON */
+.btn{
+padding:12px 20px;
+background:#00c3ff;
 border-radius:10px;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+margin-top:10px;
 }
 
 /* FORM */
 input,select{
 width:90%;
-padding:10px;
-margin:6px;
-border-radius:6px;
-border:none;
-}
-
-/* BUTTON */
-.btn{
-padding:12px 18px;
-background:linear-gradient(45deg,#00ffcc,#00c3ff);
-border-radius:8px;
-color:black;
-text-decoration:none;
-font-weight:bold;
+padding:12px;
 margin:8px;
-display:inline-block;
-}
-.btn:hover{
-box-shadow:0 0 20px #00ffcc;
+border-radius:8px;
+border:none;
 }
 
 /* QR */
 .qr{
-background:white;
+background:#fff;
 padding:10px;
-border-radius:10px;
+border-radius:15px;
 display:inline-block;
 }
 
@@ -120,8 +132,8 @@ right:20px;
 /* FOOTER */
 footer{
 text-align:center;
-padding:10px;
-background:black;
+padding:20px;
+color:#777;
 }
 </style>
 </head>
@@ -131,30 +143,33 @@ background:black;
 <header>
 <img src="logo.png" class="logo">
 <h1>RB Website Service</h1>
-<p class="typing" id="typing"></p>
+<p class="tagline">Apni Shop ko Online lekar jao 🚀</p>
+
+<a class="hero-btn" href="https://wa.me/917082575384">
+Start Now
+</a>
 </header>
 
-<div class="slider"></div>
-
-<div class="offer">
+<div class="section">
+<div class="card">
 <h2>🔥 Limited Offer</h2>
 <p id="countdown"></p>
 <a class="btn" href="https://wa.me/917082575384">Chat Now</a>
 </div>
-
-<div style="text-align:center;">
-👁 Live Visitors: <span id="visitors">1</span>
 </div>
 
+<div class="section">
+<h2>Our Services</h2>
 <div class="grid">
-<div class="box">Kiryana</div>
-<div class="box">Jewellery</div>
-<div class="box">Clothing</div>
-<div class="box">Restaurant</div>
-<div class="box">Mobile Shop</div>
+<div class="card">Kiryana Shop</div>
+<div class="card">Jewellery Shop</div>
+<div class="card">Clothing Shop</div>
+<div class="card">Restaurant</div>
+<div class="card">Mobile Shop</div>
+</div>
 </div>
 
-<div style="text-align:center;">
+<div class="section">
 <h2>📝 Order Now</h2>
 
 <input type="text" id="name" placeholder="Your Name">
@@ -172,7 +187,7 @@ background:black;
 <button class="btn" onclick="sendWhatsApp()">Submit Order</button>
 </div>
 
-<div style="text-align:center;">
+<div class="section">
 <h2>💰 Payment</h2>
 
 <a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
@@ -186,24 +201,13 @@ Pay via UPI
 </div>
 </div>
 
-<a class="btn sticky" href="https://wa.me/917082575384">Chat Now</a>
+<a class="btn sticky" href="https://wa.me/917082575384">Chat</a>
 
 <footer>
 © 2026 RB Website Service
 </footer>
 
 <script>
-// typing
-let text="Apni Shop ko Online lekar jao 🚀";
-let i=0;
-function typing(){
-if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typing,50);
-}}
-typing();
-
 // timer
 let end=new Date().getTime()+24*60*60*1000;
 setInterval(()=>{
@@ -214,13 +218,6 @@ let m=Math.floor((d%(1000*60*60))/(1000*60));
 let s=Math.floor((d%(1000*60))/1000);
 document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s";
 },1000);
-
-// visitors
-let v=1;
-setInterval(()=>{
-v+=Math.floor(Math.random()*3);
-document.getElementById("visitors").innerText=v;
-},2000);
 
 // whatsapp
 function sendWhatsApp(){
