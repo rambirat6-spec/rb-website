@@ -6,228 +6,119 @@
 <title>RB Website Service</title>
 
 <style>
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-background:#000;
-color:#fff;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
-/* HEADER */
-header{
-text-align:center;
-padding:80px 20px;
-background:linear-gradient(180deg,#000,#0a0a0a);
+/* Logo */
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 40px;
+  animation: spin 6s linear infinite;
 }
 
-/* LOGO */
-.logo{
-width:150px;
-height:150px;
-border-radius:50%;
-object-fit:cover;
-display:block;
-margin:auto;
-animation:spin 10s linear infinite;
-box-shadow:0 0 40px rgba(0,255,255,0.4);
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }
 
-@keyframes spin{
-100%{transform:rotate(360deg);}
+/* Title */
+h1 {
+  font-size: 32px;
+  margin-top: 20px;
 }
 
-h1{
-font-size:38px;
-margin:20px 0 10px;
+.tagline {
+  color: #aaa;
+  margin: 10px;
 }
 
-.tagline{
-font-size:18px;
-color:#aaa;
+/* Button */
+.btn {
+  background: #00cfff;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
-/* HERO BUTTON */
-.hero-btn{
-margin-top:20px;
-padding:14px 25px;
-background:#00c3ff;
-border-radius:30px;
-color:#000;
-font-weight:bold;
-text-decoration:none;
-display:inline-block;
+/* Contact */
+.contact {
+  margin-top: 10px;
+  color: #00ffff;
 }
 
-/* SECTION */
-.section{
-padding:40px 20px;
-text-align:center;
+/* Offer Box */
+.offer {
+  background: #111;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-/* CARD */
-.card{
-background:#111;
-padding:25px;
-margin:15px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+.timer {
+  font-size: 24px;
+  color: #00ffcc;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-}
-
-/* OFFER */
-.offer{
-background:linear-gradient(135deg,#111,#1f2937);
-border-radius:20px;
-padding:30px;
-margin:20px;
-}
-
-#countdown{
-font-size:28px;
-color:#00ffcc;
-}
-
-/* BUTTON */
-.btn{
-padding:12px 20px;
-background:#00c3ff;
-border-radius:10px;
-color:#000;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-margin-top:10px;
-}
-
-/* FORM */
-input,select{
-width:90%;
-padding:12px;
-margin:8px;
-border-radius:8px;
-border:none;
-}
-
-/* QR */
-.qr{
-background:#fff;
-padding:10px;
-border-radius:15px;
-display:inline-block;
-}
-
-/* STICKY */
-.sticky{
-position:fixed;
-bottom:20px;
-right:20px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-color:#777;
+/* WhatsApp Button */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 12px 18px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- Logo -->
 <img src="logo.png" class="logo">
+
 <h1>RB Website Service</h1>
 <p class="tagline">Apni Shop ko Online lekar jao 🚀</p>
 
-<a class="hero-btn" href="https://wa.me/917082575384">
-Start Now
-</a>
-</header>
+<a href="#" class="btn">Start Now</a>
 
-<div class="section">
-<div class="card">
-<h2>🔥 Limited Offer</h2>
-<p id="countdown"></p>
-<a class="btn" href="https://wa.me/917082575384">Chat Now</a>
-</div>
+<p class="contact">📞 Call/WhatsApp: 7082575384</p>
+
+<!-- Offer -->
+<div class="offer">
+  <h2>🔥 Limited Offer</h2>
+  <p class="timer" id="timer">24:00:00</p>
 </div>
 
-<div class="section">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card">Kiryana Shop</div>
-<div class="card">Jewellery Shop</div>
-<div class="card">Clothing Shop</div>
-<div class="card">Restaurant</div>
-<div class="card">Mobile Shop</div>
-</div>
-</div>
-
-<div class="section">
-<h2>📝 Order Now</h2>
-
-<input type="text" id="name" placeholder="Your Name">
-<input type="tel" id="phone" placeholder="Mobile Number">
-
-<select id="service">
-<option>Kiryana</option>
-<option>Jewellery</option>
-<option>Clothing</option>
-<option>Restaurant</option>
-<option>Mobile</option>
-</select>
-
-<br>
-<button class="btn" onclick="sendWhatsApp()">Submit Order</button>
-</div>
-
-<div class="section">
-<h2>💰 Payment</h2>
-
-<a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
-Pay via UPI
-</a>
-
-<br><br>
-
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
-</div>
-</div>
-
-<a class="btn sticky" href="https://wa.me/917082575384">Chat</a>
-
-<footer>
-© 2026 RB Website Service
-</footer>
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/917082575384">Chat</a>
 
 <script>
-// timer
-let end=new Date().getTime()+24*60*60*1000;
-setInterval(()=>{
-let now=new Date().getTime();
-let d=end-now;
-let h=Math.floor(d/(1000*60*60));
-let m=Math.floor((d%(1000*60*60))/(1000*60));
-let s=Math.floor((d%(1000*60))/1000);
-document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s";
-},1000);
+// Countdown Timer
+let time = 86400;
 
-// whatsapp
-function sendWhatsApp(){
-let n=document.getElementById("name").value;
-let p=document.getElementById("phone").value;
-let s=document.getElementById("service").value;
+setInterval(() => {
+  let h = Math.floor(time / 3600);
+  let m = Math.floor((time % 3600) / 60);
+  let s = time % 60;
 
-let msg=`New Order:%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
-window.open("https://wa.me/917082575384?text="+msg);
-}
+  document.getElementById("timer").innerText =
+    h + "h " + m + "m " + s + "s";
+
+  if (time > 0) time--;
+}, 1000);
 </script>
 
 </body>
