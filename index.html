@@ -6,10 +6,10 @@
 <title>RB Web Service</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
-
 body{
-background:linear-gradient(135deg,#020617,#0f172a);
+margin:0;
+font-family:sans-serif;
+background:linear-gradient(135deg,#0f172a,#020617);
 color:white;
 }
 
@@ -18,9 +18,8 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
+padding:15px;
 background:#020617;
-border-bottom:1px solid #1e293b;
 }
 
 .logo{
@@ -33,75 +32,67 @@ gap:10px;
 width:50px;
 height:50px;
 border-radius:50%;
-border:2px solid #22c55e;
+animation:spin 6s linear infinite;
 }
 
-.logo h2{
-color:#22c55e;
-}
-
-.phone{
-color:#38bdf8;
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:50px 20px;
 }
 
 .hero h1{
-font-size:34px;
+font-size:28px;
 color:#22c55e;
 }
 
-.hero p{
-margin-top:10px;
-opacity:0.7;
-}
-
-/* BUTTON */
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
 background:#22c55e;
+padding:12px 25px;
 color:black;
 text-decoration:none;
-border-radius:10px;
+border-radius:8px;
+display:inline-block;
+margin-top:20px;
 font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#16a34a;
 }
 
 /* SERVICES */
 .section{
-padding:40px 20px;
+padding:30px 20px;
 text-align:center;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+grid-template-columns:1fr 1fr;
 gap:15px;
 margin-top:20px;
 }
 
 .card{
-background:#020617;
-padding:20px;
+background:#111827;
+padding:15px;
 border-radius:10px;
-border:1px solid #1e293b;
+}
+
+/* WORK */
+.work img{
+width:100%;
+border-radius:10px;
+margin-top:10px;
 }
 
 /* FOOTER */
 footer{
-padding:20px;
 text-align:center;
-opacity:0.6;
+padding:20px;
+opacity:0.7;
 }
 </style>
 </head>
@@ -113,25 +104,35 @@ opacity:0.6;
 <img src="logo.png">
 <h2>RB Web Service</h2>
 </div>
-<div class="phone">📞 7082575384</div>
+<div>📞 7082575384</div>
 </header>
 
 <section class="hero">
 <h1>🚀 Apne Business Ki Website Banwaye</h1>
 <p>Fast | Professional | Affordable</p>
-
 <a href="order.html" class="btn">📩 Order Now</a>
 </section>
 
 <section class="section">
 <h2>🔥 Our Services</h2>
+
 <div class="cards">
 <div class="card">Kiryana</div>
 <div class="card">Medical</div>
 <div class="card">Restaurant</div>
 <div class="card">Jewellery</div>
-<div class="card">Mobile</div>
+<div class="card">Mobile Shop</div>
+<div class="card">Clothing</div>
 </div>
+</section>
+
+<section class="section work">
+<h2>📸 Our Work</h2>
+
+<img src="https://via.placeholder.com/400x250?text=Website+Demo+1">
+<img src="https://via.placeholder.com/400x250?text=Website+Demo+2">
+<img src="https://via.placeholder.com/400x250?text=Website+Demo+3">
+
 </section>
 
 <footer>
