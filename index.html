@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,33 +7,61 @@
 <title>RB Web Service</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+
 body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
+background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
 text-align:center;
 }
 
+/* HEADER */
 header{
-padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
 background:#020617;
 }
 
-.hero{
-padding:50px 20px;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+border-radius:50%;
+animation:spin 6s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
 }
 
 .btn{
 background:#22c55e;
-padding:12px 20px;
+padding:10px 20px;
 border-radius:8px;
 color:white;
 text-decoration:none;
 }
 
-.section{
-padding:30px;
+/* HERO */
+.hero{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .card{
@@ -40,41 +69,65 @@ background:#1e293b;
 margin:10px;
 padding:15px;
 border-radius:10px;
+width:150px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px;
+border-radius:50%;
+color:white;
+text-decoration:none;
+font-size:20px;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h2>RB Web Service</h2>
+<div class="logo">
+<img src="logo.png">
+<h3>RB Web Service</h3>
+</div>
 <p>📞 7082575384</p>
 </header>
 
 <section class="hero">
-<h1>Professional Website Banwaye</h1>
-<p>Har business ke liye modern website</p>
+<h1>🚀 Apne Business Ki Website Banwaye</h1>
+<p>Fast | Professional | Affordable</p>
 <a href="https://wa.me/917082575384" class="btn">Order Now</a>
 </section>
 
-<section class="section">
+<section>
 <h2>Services</h2>
-<div class="card">Kiryana Store</div>
-<div class="card">Medical Store</div>
+<div class="cards">
+<div class="card">Kiryana</div>
+<div class="card">Medical</div>
 <div class="card">Restaurant</div>
 <div class="card">Jewellery</div>
-<div class="card">Mobile Shop</div>
+<div class="card">Mobile</div>
+</div>
 </section>
 
-<section class="section">
+<section>
 <h2>Pricing</h2>
-<div class="card">Basic ₹2999</div>
-<div class="card">Premium ₹3999</div>
+<div class="cards">
+<div class="card">₹2999</div>
+<div class="card">₹3999 ⭐</div>
+</div>
 </section>
 
-<footer class="section">
+<footer style="padding:20px;">
 <p>© 2026 RB Web Service</p>
 </footer>
+
+<a href="https://wa.me/917082575384" class="whatsapp">💬</a>
 
 </body>
 </html>
