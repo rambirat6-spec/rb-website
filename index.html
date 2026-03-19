@@ -9,108 +9,120 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #f0f2f5;
-}
-
-header {
-    background: linear-gradient(135deg, #000, #444);
+    background: linear-gradient(135deg,#020617,#0f172a);
     color: white;
-    text-align: center;
-    padding: 30px 20px;
 }
 
-header img {
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo {
     width: 120px;
     border-radius: 50%;
     animation: spin 6s linear infinite;
-}
-
-header h1 {
-    margin: 10px 0 5px;
-    font-size: 28px;
-}
-
-header p {
-    opacity: 0.8;
+    box-shadow: 0 0 25px #00f0ff;
 }
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
+    100% {transform: rotate(360deg);}
 }
 
+/* TYPING */
+.typing {
+    color: #00f0ff;
+    border-right: 2px solid;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+/* URGENCY */
+.urgent {
+    color: red;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {opacity: 0;}
+}
+
+/* SLIDER */
 .slider {
-    height: 200px;
-    background: url('https://picsum.photos/800/300?1') no-repeat center/cover;
+    height: 180px;
+    margin: 10px;
+    border-radius: 15px;
+    background: url('https://picsum.photos/800/300?1') center/cover;
     animation: slide 10s infinite;
 }
 
 @keyframes slide {
-    0% {background-image: url('https://picsum.photos/800/300?1');}
-    50% {background-image: url('https://picsum.photos/800/300?2');}
-    100% {background-image: url('https://picsum.photos/800/300?3');}
+    0% {background-image:url('https://picsum.photos/800/300?1');}
+    50% {background-image:url('https://picsum.photos/800/300?2');}
+    100% {background-image:url('https://picsum.photos/800/300?3');}
 }
 
+/* SECTION */
 .section {
-    padding: 40px 20px;
+    padding: 20px;
     text-align: center;
 }
 
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 10px;
 }
 
 .box {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.box:hover {
-    transform: translateY(-5px);
+/* FORM */
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
 }
 
+/* BUTTON */
 .btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
+    padding: 12px 18px;
+    background: linear-gradient(45deg,#00ffcc,#00c3ff);
     border-radius: 8px;
-    margin: 5px;
+    color: black;
+    text-decoration: none;
     font-weight: bold;
+    margin: 8px;
+    display: inline-block;
 }
 
-.price {
-    font-size: 22px;
-    color: green;
+/* QR */
+.qr-box {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
-.highlight {
-    border: 2px solid green;
-    background: #eaffea;
-}
-
-.timer {
-    font-size: 20px;
-    color: red;
-    font-weight: bold;
-}
-
+/* STICKY */
 .sticky {
     position: fixed;
     bottom: 15px;
     right: 15px;
 }
 
+/* FOOTER */
 footer {
-    background: black;
-    color: white;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
+    background: black;
 }
 </style>
 </head>
@@ -118,96 +130,105 @@ footer {
 <body>
 
 <header>
-    <!-- ✅ WORKING LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
+    <img src="logo.png" class="logo">
     <h1>RB Website Service</h1>
-    <p>Apni Shop ko Online lekar jao 🚀</p>
+    <p class="typing" id="typing"></p>
+    <p class="urgent">⚠ Only 3 Slots Left Today!</p>
 </header>
 
 <div class="slider"></div>
 
 <div class="section">
-    <h2>🔥 Limited Offer</h2>
-    <p class="timer" id="countdown">Loading...</p>
+    👁 Live Visitors: <span id="visitors">1</span>
 </div>
 
 <div class="section">
     <h2>Our Services</h2>
     <div class="grid">
-        <div class="box">Kiryana Shop</div>
-        <div class="box">Jewellery Shop</div>
-        <div class="box">Clothing Shop</div>
+        <div class="box">Kiryana</div>
+        <div class="box">Jewellery</div>
+        <div class="box">Clothing</div>
         <div class="box">Restaurant</div>
         <div class="box">Mobile Shop</div>
     </div>
 </div>
 
 <div class="section">
-    <h2>Pricing</h2>
-    <div class="grid">
-        <div class="box">
-            <h3>Standard</h3>
-            <p class="price">₹1999</p>
-        </div>
+    <h2>📝 Order Now</h2>
 
-        <div class="box highlight">
-            <h3>Premium ⭐</h3>
-            <p class="price">₹2999</p>
-        </div>
-    </div>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="tel" id="phone" placeholder="Mobile Number">
+
+    <select id="service">
+        <option>Kiryana Shop</option>
+        <option>Jewellery Shop</option>
+        <option>Clothing Shop</option>
+        <option>Restaurant</option>
+        <option>Mobile Shop</option>
+    </select>
+
+    <br>
+    <button class="btn" onclick="sendWhatsApp()">Submit Order</button>
 </div>
 
 <div class="section">
-    <h2>Customer Reviews ⭐</h2>
-    <div class="grid">
-        <div class="box">"Bahut achi website banayi 👍"</div>
-        <div class="box">"Fast service 💯"</div>
-        <div class="box">"Meri shop online ho gayi 🚀"</div>
-    </div>
-</div>
+    <h2>💰 Payment</h2>
 
-<div class="section">
-    <h2>Pay Now</h2>
-
-    <!-- ✅ UPI BUTTON (EDIT YOUR UPI ID) -->
     <a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
         Pay via UPI
     </a>
 
     <br><br>
 
-    <!-- ✅ WORKING QR CODE -->
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
+    <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
+    </div>
 </div>
 
 <div class="section">
-    <h2>Contact</h2>
-    <p>📞 7082575384</p>
-
-    <a class="btn" href="https://wa.me/917082575384">WhatsApp</a>
-    <a class="btn" href="tel:7082575384">Call</a>
+    <h2>⭐ Reviews</h2>
+    <div class="grid">
+        <div class="box">"Best service 🔥"</div>
+        <div class="box">"Fast delivery 🚀"</div>
+        <div class="box">"Highly recommend 👍"</div>
+    </div>
 </div>
 
 <a class="btn sticky" href="https://wa.me/917082575384">Chat Now</a>
 
 <footer>
-    © 2026 RB Website Service
+© 2026 RB Website Service
 </footer>
 
 <script>
-let end = new Date().getTime() + 24*60*60*1000;
+// typing
+let text="Apni Shop ko Online lekar jao 🚀";
+let i=0;
+function typing(){
+ if(i<text.length){
+  document.getElementById("typing").innerHTML+=text.charAt(i);
+  i++;
+  setTimeout(typing,50);
+ }
+}
+typing();
 
-setInterval(function() {
-    let now = new Date().getTime();
-    let diff = end - now;
+// visitors fake
+let v=1;
+setInterval(()=>{
+ v+=Math.floor(Math.random()*3);
+ document.getElementById("visitors").innerText=v;
+},2000);
 
-    let h = Math.floor(diff/(1000*60*60));
-    let m = Math.floor((diff%(1000*60*60))/(1000*60));
-    let s = Math.floor((diff%(1000*60))/1000);
+// whatsapp
+function sendWhatsApp(){
+ let n=document.getElementById("name").value;
+ let p=document.getElementById("phone").value;
+ let s=document.getElementById("service").value;
 
-    document.getElementById("countdown").innerHTML =
-    h + "h " + m + "m " + s + "s";
-}, 1000);
+ let msg=`New Order:%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
+ window.open("https://wa.me/917082575384?text="+msg);
+}
 </script>
 
 </body>
