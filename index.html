@@ -7,37 +7,111 @@
 
 <style>
 body {
-    font-family: Arial;
     margin: 0;
-    background: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
 }
 
+/* HEADER */
 header {
+    background: linear-gradient(135deg, #000, #444);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* LOGO ROTATE */
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+header img {
+    animation: spin 6s linear infinite;
+}
+
+/* SLIDER */
+.slider {
+    height: 200px;
+    background: url('https://picsum.photos/800/300') no-repeat center/cover;
+    animation: slide 10s infinite;
+}
+
+@keyframes slide {
+    0% {background-image: url('https://picsum.photos/800/300?1');}
+    50% {background-image: url('https://picsum.photos/800/300?2');}
+    100% {background-image: url('https://picsum.photos/800/300?3');}
+}
+
+/* SECTION */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* BOX */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+/* PRICE */
+.price {
+    font-size: 22px;
+    color: green;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    border: 2px solid green;
+    background: #eaffea;
+}
+
+/* TIMER */
+.timer {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+/* STICKY */
+.sticky {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+/* FOOTER */
+footer {
     background: black;
     color: white;
     text-align: center;
     padding: 15px;
-}
-
-.section {
-    padding: 20px;
-    text-align: center;
-}
-
-.box {
-    background: white;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px;
-    background: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 </style>
 </head>
@@ -45,50 +119,93 @@ header {
 <body>
 
 <header>
-    <img src="file_000000008b74720897b8e00e3ffd403e.png" width="120" style="animation: spin 5s linear infinite;">
+    <img src="logo.png" width="120">
     <h1>RB Website Service</h1>
-    <p>Har type ki shop ke liye website</p>
+    <p>Apni Shop ko Online lekar jao 🚀</p>
 </header>
 
-<div style="background:yellow; text-align:center; padding:10px;">
-    <b>Call Now: 7082575384</b>
+<div class="slider"></div>
+
+<div class="section">
+    <h2>🔥 Limited Offer</h2>
+    <p class="timer" id="countdown">Loading...</p>
 </div>
 
 <div class="section">
-
-    <div class="box">Kiryana Shop Website</div>
-    <div class="box">Jewellery Shop Website</div>
-    <div class="box">Clothes Shop Website</div>
-    <div class="box">Restaurant Website</div>
-    <div class="box">Mobile Shop Website</div>
-
-</div>
-
-<div class="section">
-    <h2>Our Pricing</h2>
-
-    <div class="box">
-        <h3>Standard Plan</h3>
-        <p><b>₹1999</b></p>
-        <p>Website + WhatsApp + Call Button</p>
-    </div>
-
-    <div class="box" style="border:2px solid green;">
-        <h3>Premium Plan</h3>
-        <p><b>₹2999</b></p>
-        <p>Full Website + Gallery + Premium Design</p>
+    <h2>Our Services</h2>
+    <div class="grid">
+        <div class="box">Kiryana Shop</div>
+        <div class="box">Jewellery Shop</div>
+        <div class="box">Clothing Shop</div>
+        <div class="box">Restaurant</div>
+        <div class="box">Mobile Shop</div>
     </div>
 </div>
 
 <div class="section">
-    <h2>Contact Us</h2>
-    <p>📍 Hisar, Haryana</p>
+    <h2>Pricing</h2>
+    <div class="grid">
+        <div class="box">
+            <h3>Standard</h3>
+            <p class="price">₹1999</p>
+        </div>
+
+        <div class="box highlight">
+            <h3>Premium ⭐</h3>
+            <p class="price">₹2999</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Customer Reviews ⭐</h2>
+    <div class="grid">
+        <div class="box">"Bahut achi website banayi 👍"</div>
+        <div class="box">"Fast service 💯"</div>
+        <div class="box">"Meri shop online ho gayi 🚀"</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Pay Now</h2>
+
+    <a class="btn" href="upi://pay?pa=YOUR-UPI-ID@upi&pn=RB Website&cu=INR">
+        Pay via UPI
+    </a>
+
+    <br><br>
+    <img src="qr.png" width="150">
+</div>
+
+<div class="section">
+    <h2>Contact</h2>
     <p>📞 7082575384</p>
 
-    <a class="btn" href="https://wa.me/917082575384">WhatsApp Now</a>
-    <br><br>
-    <a class="btn" href="tel:7082575384">Call Now</a>
+    <a class="btn" href="https://wa.me/917082575384">WhatsApp</a>
+    <a class="btn" href="tel:7082575384">Call</a>
 </div>
+
+<a class="btn sticky" href="https://wa.me/917082575384">Chat Now</a>
+
+<footer>
+    © 2026 RB Website Service
+</footer>
+
+<script>
+let end = new Date().getTime() + 24*60*60*1000;
+
+setInterval(function() {
+    let now = new Date().getTime();
+    let diff = end - now;
+
+    let h = Math.floor(diff/(1000*60*60));
+    let m = Math.floor((diff%(1000*60*60))/(1000*60));
+    let s = Math.floor((diff%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML =
+    h + "h " + m + "m " + s + "s";
+}, 1000);
+</script>
 
 </body>
 </html>
