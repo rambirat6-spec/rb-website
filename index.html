@@ -6,123 +6,122 @@
 <title>RB Website Service</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#020617,#0f172a);
-    color: white;
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
 }
 
 /* HEADER */
-header {
-    text-align: center;
-    padding: 40px 20px;
+header{
+text-align:center;
+padding:50px 20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 }
 
-.logo {
-    width: 120px;
-    border-radius: 50%;
-    animation: spin 6s linear infinite;
-    box-shadow: 0 0 25px #00f0ff;
+/* LOGO */
+.logo{
+width:120px;
+border-radius:50%;
+animation:spin 6s linear infinite;
+box-shadow:0 0 40px #00f0ff;
 }
-
-@keyframes spin {
-    100% {transform: rotate(360deg);}
+@keyframes spin{
+100%{transform:rotate(360deg);}
 }
 
 /* TYPING */
-.typing {
-    color: #00f0ff;
-    border-right: 2px solid;
-    display: inline-block;
-    padding-right: 5px;
-}
-
-/* URGENCY */
-.urgent {
-    color: red;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    50% {opacity: 0;}
+.typing{
+color:#00f0ff;
+border-right:2px solid;
 }
 
 /* SLIDER */
-.slider {
-    height: 180px;
-    margin: 10px;
-    border-radius: 15px;
-    background: url('https://picsum.photos/800/300?1') center/cover;
-    animation: slide 10s infinite;
+.slider{
+height:200px;
+margin:15px;
+border-radius:20px;
+background:url('https://picsum.photos/800/300?1') center/cover;
+animation:slide 10s infinite;
+}
+@keyframes slide{
+0%{background-image:url('https://picsum.photos/800/300?1');}
+50%{background-image:url('https://picsum.photos/800/300?2');}
+100%{background-image:url('https://picsum.photos/800/300?3');}
 }
 
-@keyframes slide {
-    0% {background-image:url('https://picsum.photos/800/300?1');}
-    50% {background-image:url('https://picsum.photos/800/300?2');}
-    100% {background-image:url('https://picsum.photos/800/300?3');}
+/* OFFER */
+.offer{
+background:linear-gradient(135deg,#111,#1e293b);
+margin:20px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,255,200,0.3);
 }
-
-/* SECTION */
-.section {
-    padding: 20px;
-    text-align: center;
+#countdown{
+font-size:28px;
+color:#00ffcc;
 }
 
 /* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-    gap: 10px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:10px;
+padding:20px;
 }
-
-.box {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 10px;
+.box{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
 }
 
 /* FORM */
-input, select {
-    width: 90%;
-    padding: 10px;
-    margin: 6px;
-    border-radius: 6px;
-    border: none;
+input,select{
+width:90%;
+padding:10px;
+margin:6px;
+border-radius:6px;
+border:none;
 }
 
 /* BUTTON */
-.btn {
-    padding: 12px 18px;
-    background: linear-gradient(45deg,#00ffcc,#00c3ff);
-    border-radius: 8px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 8px;
-    display: inline-block;
+.btn{
+padding:12px 18px;
+background:linear-gradient(45deg,#00ffcc,#00c3ff);
+border-radius:8px;
+color:black;
+text-decoration:none;
+font-weight:bold;
+margin:8px;
+display:inline-block;
+}
+.btn:hover{
+box-shadow:0 0 20px #00ffcc;
 }
 
 /* QR */
-.qr-box {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    display: inline-block;
+.qr{
+background:white;
+padding:10px;
+border-radius:10px;
+display:inline-block;
 }
 
 /* STICKY */
-.sticky {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
+.sticky{
+position:fixed;
+bottom:20px;
+right:20px;
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: black;
+footer{
+text-align:center;
+padding:10px;
+background:black;
 }
 </style>
 </head>
@@ -130,68 +129,61 @@ footer {
 <body>
 
 <header>
-    <img src="logo.png" class="logo">
-    <h1>RB Website Service</h1>
-    <p class="typing" id="typing"></p>
-    <p class="urgent">⚠ Only 3 Slots Left Today!</p>
+<img src="logo.png" class="logo">
+<h1>RB Website Service</h1>
+<p class="typing" id="typing"></p>
 </header>
 
 <div class="slider"></div>
 
-<div class="section">
-    👁 Live Visitors: <span id="visitors">1</span>
+<div class="offer">
+<h2>🔥 Limited Offer</h2>
+<p id="countdown"></p>
+<a class="btn" href="https://wa.me/917082575384">Chat Now</a>
 </div>
 
-<div class="section">
-    <h2>Our Services</h2>
-    <div class="grid">
-        <div class="box">Kiryana</div>
-        <div class="box">Jewellery</div>
-        <div class="box">Clothing</div>
-        <div class="box">Restaurant</div>
-        <div class="box">Mobile Shop</div>
-    </div>
+<div style="text-align:center;">
+👁 Live Visitors: <span id="visitors">1</span>
 </div>
 
-<div class="section">
-    <h2>📝 Order Now</h2>
-
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="tel" id="phone" placeholder="Mobile Number">
-
-    <select id="service">
-        <option>Kiryana Shop</option>
-        <option>Jewellery Shop</option>
-        <option>Clothing Shop</option>
-        <option>Restaurant</option>
-        <option>Mobile Shop</option>
-    </select>
-
-    <br>
-    <button class="btn" onclick="sendWhatsApp()">Submit Order</button>
+<div class="grid">
+<div class="box">Kiryana</div>
+<div class="box">Jewellery</div>
+<div class="box">Clothing</div>
+<div class="box">Restaurant</div>
+<div class="box">Mobile Shop</div>
 </div>
 
-<div class="section">
-    <h2>💰 Payment</h2>
+<div style="text-align:center;">
+<h2>📝 Order Now</h2>
 
-    <a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
-        Pay via UPI
-    </a>
+<input type="text" id="name" placeholder="Your Name">
+<input type="tel" id="phone" placeholder="Mobile Number">
 
-    <br><br>
+<select id="service">
+<option>Kiryana</option>
+<option>Jewellery</option>
+<option>Clothing</option>
+<option>Restaurant</option>
+<option>Mobile</option>
+</select>
 
-    <div class="qr-box">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
-    </div>
+<br>
+<button class="btn" onclick="sendWhatsApp()">Submit Order</button>
 </div>
 
-<div class="section">
-    <h2>⭐ Reviews</h2>
-    <div class="grid">
-        <div class="box">"Best service 🔥"</div>
-        <div class="box">"Fast delivery 🚀"</div>
-        <div class="box">"Highly recommend 👍"</div>
-    </div>
+<div style="text-align:center;">
+<h2>💰 Payment</h2>
+
+<a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
+Pay via UPI
+</a>
+
+<br><br>
+
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
+</div>
 </div>
 
 <a class="btn sticky" href="https://wa.me/917082575384">Chat Now</a>
@@ -205,29 +197,39 @@ footer {
 let text="Apni Shop ko Online lekar jao 🚀";
 let i=0;
 function typing(){
- if(i<text.length){
-  document.getElementById("typing").innerHTML+=text.charAt(i);
-  i++;
-  setTimeout(typing,50);
- }
-}
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,50);
+}}
 typing();
 
-// visitors fake
+// timer
+let end=new Date().getTime()+24*60*60*1000;
+setInterval(()=>{
+let now=new Date().getTime();
+let d=end-now;
+let h=Math.floor(d/(1000*60*60));
+let m=Math.floor((d%(1000*60*60))/(1000*60));
+let s=Math.floor((d%(1000*60))/1000);
+document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s";
+},1000);
+
+// visitors
 let v=1;
 setInterval(()=>{
- v+=Math.floor(Math.random()*3);
- document.getElementById("visitors").innerText=v;
+v+=Math.floor(Math.random()*3);
+document.getElementById("visitors").innerText=v;
 },2000);
 
 // whatsapp
 function sendWhatsApp(){
- let n=document.getElementById("name").value;
- let p=document.getElementById("phone").value;
- let s=document.getElementById("service").value;
+let n=document.getElementById("name").value;
+let p=document.getElementById("phone").value;
+let s=document.getElementById("service").value;
 
- let msg=`New Order:%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
- window.open("https://wa.me/917082575384?text="+msg);
+let msg=`New Order:%0AName: ${n}%0APhone: ${p}%0AService: ${s}`;
+window.open("https://wa.me/917082575384?text="+msg);
 }
 </script>
 
