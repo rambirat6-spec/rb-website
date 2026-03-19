@@ -1,0 +1,435 @@
+ ## 📁 File Location: `/app/order-form-complete.html`
+Action: file_editor view /app/order-form-complete.html
+Observation: [Showing lines 1-431 of 431 total] /app/order-form-complete.html:
+1|<!DOCTYPE html>
+2|<html lang="en">
+3|<head>
+4|<meta charset="UTF-8">
+5|<meta name="viewport" content="width=device-width, initial-scale=1.0">
+6|<title>Order Now - Professional Order Form</title>
+7|
+8|<style>
+9|* {
+10|  margin: 0;
+11|  padding: 0;
+12|  box-sizing: border-box;
+13|}
+14|
+15|body {
+16|  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+17|  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+18|  min-height: 100vh;
+19|  padding: 20px;
+20|  color: white;
+21|}
+22|
+23|.container {
+24|  max-width: 600px;
+25|  margin: 0 auto;
+26|  padding-top: 40px;
+27|}
+28|
+29|.header {
+30|  text-align: center;
+31|  margin-bottom: 40px;
+32|  animation: fadeInDown 0.8s ease-out;
+33|}
+34|
+35|.header h1 {
+36|  font-size: 2.5rem;
+37|  margin-bottom: 10px;
+38|  background: linear-gradient(to right, #22c55e, #10b981);
+39|  -webkit-background-clip: text;
+40|  -webkit-text-fill-color: transparent;
+41|  background-clip: text;
+42|}
+43|
+44|.header p {
+45|  color: #94a3b8;
+46|  font-size: 1.1rem;
+47|}
+48|
+49|.form-card {
+50|  background: rgba(30, 41, 59, 0.7);
+51|  backdrop-filter: blur(10px);
+52|  border-radius: 24px;
+53|  padding: 40px;
+54|  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+55|  border: 1px solid rgba(255, 255, 255, 0.1);
+56|  animation: fadeInUp 0.8s ease-out;
+57|}
+58|
+59|.form-group {
+60|  margin-bottom: 24px;
+61|}
+62|
+63|label {
+64|  display: block;
+65|  color: #cbd5e1;
+66|  font-weight: 500;
+67|  margin-bottom: 8px;
+68|  font-size: 0.95rem;
+69|}
+70|
+71|input, select, textarea {
+72|  width: 100%;
+73|  padding: 14px 18px;
+74|  background: rgba(15, 23, 42, 0.6);
+75|  border: 2px solid rgba(148, 163, 184, 0.3);
+76|  border-radius: 12px;
+77|  color: white;
+78|  font-size: 1rem;
+79|  transition: all 0.3s ease;
+80|  font-family: inherit;
+81|}
+82|
+83|input:focus, select:focus, textarea:focus {
+84|  outline: none;
+85|  border-color: #22c55e;
+86|  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+87|  background: rgba(15, 23, 42, 0.8);
+88|}
+89|
+90|input::placeholder, textarea::placeholder {
+91|  color: #64748b;
+92|}
+93|
+94|select {
+95|  cursor: pointer;
+96|  appearance: none;
+97|  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2322c55e'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+98|  background-repeat: no-repeat;
+99|  background-position: right 12px center;
+100|  background-size: 20px;
+101|  padding-right: 40px;
+102|}
+103|
+104|textarea {
+105|  resize: vertical;
+106|  min-height: 120px;
+107|  font-family: inherit;
+108|}
+109|
+110|button {
+111|  width: 100%;
+112|  padding: 16px;
+113|  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+114|  border: none;
+115|  border-radius: 12px;
+116|  color: white;
+117|  font-size: 1.1rem;
+118|  font-weight: bold;
+119|  cursor: pointer;
+120|  transition: all 0.3s ease;
+121|  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+122|  display: flex;
+123|  align-items: center;
+124|  justify-content: center;
+125|  gap: 10px;
+126|}
+127|
+128|button:hover {
+129|  transform: translateY(-2px);
+130|  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.4);
+131|  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+132|}
+133|
+134|button:active {
+135|  transform: translateY(0);
+136|}
+137|
+138|button:disabled {
+139|  opacity: 0.6;
+140|  cursor: not-allowed;
+141|  transform: none;
+142|}
+143|
+144|.required {
+145|  color: #ef4444;
+146|}
+147|
+148|.alert {
+149|  padding: 14px 18px;
+150|  border-radius: 12px;
+151|  margin-bottom: 20px;
+152|  display: none;
+153|  animation: slideIn 0.4s ease-out;
+154|}
+155|
+156|.alert.show {
+157|  display: block;
+158|}
+159|
+160|.alert-error {
+161|  background: rgba(239, 68, 68, 0.15);
+162|  border: 2px solid rgba(239, 68, 68, 0.5);
+163|  color: #fca5a5;
+164|}
+165|
+166|.alert-success {
+167|  background: rgba(34, 197, 94, 0.15);
+168|  border: 2px solid rgba(34, 197, 94, 0.5);
+169|  color: #86efac;
+170|}
+171|
+172|.footer {
+173|  text-align: center;
+174|  margin-top: 30px;
+175|  color: #64748b;
+176|  font-size: 0.9rem;
+177|}
+178|
+179|.spinner {
+180|  width: 20px;
+181|  height: 20px;
+182|  border: 3px solid rgba(255, 255, 255, 0.3);
+183|  border-top-color: white;
+184|  border-radius: 50%;
+185|  animation: spin 0.8s linear infinite;
+186|}
+187|
+188|@keyframes spin {
+189|  to { transform: rotate(360deg); }
+190|}
+191|
+192|@keyframes fadeInDown {
+193|  from {
+194|    opacity: 0;
+195|    transform: translateY(-20px);
+196|  }
+197|  to {
+198|    opacity: 1;
+199|    transform: translateY(0);
+200|  }
+201|}
+202|
+203|@keyframes fadeInUp {
+204|  from {
+205|    opacity: 0;
+206|    transform: translateY(20px);
+207|  }
+208|  to {
+209|    opacity: 1;
+210|    transform: translateY(0);
+211|  }
+212|}
+213|
+214|@keyframes slideIn {
+215|  from {
+216|    opacity: 0;
+217|    transform: translateX(-20px);
+218|  }
+219|  to {
+220|    opacity: 1;
+221|    transform: translateX(0);
+222|  }
+223|}
+224|
+225|@media (max-width: 640px) {
+226|  .header h1 {
+227|    font-size: 2rem;
+228|  }
+229|  
+230|  .form-card {
+231|    padding: 24px;
+232|  }
+233|  
+234|  body {
+235|    padding: 10px;
+236|  }
+237|}
+238|
+239|.service-price {
+240|  color: #22c55e;
+241|  font-weight: bold;
+242|}
+243|</style>
+244|</head>
+245|
+246|<body>
+247|
+248|<div class="container">
+249|  <div class="header">
+250|    <h1>📩 Order Form</h1>
+251|    <p>Fill the form below and connect on WhatsApp instantly</p>
+252|  </div>
+253|
+254|  <div class="form-card">
+255|    <div id="alertBox" class="alert"></div>
+256|
+257|    <form id="orderForm" onsubmit="handleSubmit(event)">
+258|      <div class="form-group">
+259|        <label for="name">Your Name <span class="required">*</span></label>
+260|        <input 
+261|          type="text" 
+262|          id="name" 
+263|          name="name"
+264|          placeholder="Enter your full name" 
+265|          required
+266|        >
+267|      </div>
+268|
+269|      <div class="form-group">
+270|        <label for="phone">Phone Number <span class="required">*</span></label>
+271|        <input 
+272|          type="tel" 
+273|          id="phone" 
+274|          name="phone"
+275|          placeholder="Enter your phone number" 
+276|          required
+277|          pattern="[0-9]{10,}"
+278|          title="Please enter at least 10 digits"
+279|        >
+280|      </div>
+281|
+282|      <div class="form-group">
+283|        <label for="service">Select Service <span class="required">*</span></label>
+284|        <select id="service" name="service" required>
+285|          <option value="Website - ₹2999">Website - ₹2999</option>
+286|          <option value="Business Website - ₹3999">Business Website - ₹3999</option>
+287|          <option value="Shop Website">Shop Website</option>
+288|          <option value="E-commerce Website - ₹5999">E-commerce Website - ₹5999</option>
+289|          <option value="Custom Website">Custom Website (Contact for Price)</option>
+290|        </select>
+291|      </div>
+292|
+293|      <div class="form-group">
+294|        <label for="message">Your Message (Optional)</label>
+295|        <textarea 
+296|          id="message" 
+297|          name="message"
+298|          placeholder="Tell us about your requirements, features you need, etc..."
+299|        ></textarea>
+300|      </div>
+301|
+302|      <button type="submit" id="submitBtn">
+303|        <span id="btnText">📱 Send on WhatsApp</span>
+304|        <div id="spinner" class="spinner" style="display: none;"></div>
+305|      </button>
+306|    </form>
+307|
+308|    <div class="footer">
+309|      🔒 Your information is safe and secure
+310|    </div>
+311|  </div>
+312|
+313|  <div class="footer" style="margin-top: 40px;">
+314|    <p>Powered by Professional Web Services</p>
+315|  </div>
+316|</div>
+317|
+318|<script>
+319|// Configuration
+320|const WHATSAPP_NUMBER = '917082575384'; // Your WhatsApp number
+321|
+322|// Alert functions
+323|function showAlert(message, type) {
+324|  const alertBox = document.getElementById('alertBox');
+325|  alertBox.textContent = message;
+326|  alertBox.className = `alert alert-${type} show`;
+327|  
+328|  if (type === 'success') {
+329|    setTimeout(() => {
+330|      alertBox.classList.remove('show');
+331|    }, 3000);
+332|  }
+333|}
+334|
+335|function hideAlert() {
+336|  const alertBox = document.getElementById('alertBox');
+337|  alertBox.classList.remove('show');
+338|}
+339|
+340|// Form validation
+341|function validateForm(formData) {
+342|  if (!formData.name.trim()) {
+343|    showAlert('⚠️ Please enter your name', 'error');
+344|    return false;
+345|  }
+346|  
+347|  if (!formData.phone.trim()) {
+348|    showAlert('⚠️ Please enter your phone number', 'error');
+349|    return false;
+350|  }
+351|  
+352|  if (formData.phone.length < 10) {
+353|    showAlert('⚠️ Please enter a valid phone number (at least 10 digits)', 'error');
+354|    return false;
+355|  }
+356|  
+357|  return true;
+358|}
+359|
+360|// Send to WhatsApp
+361|function sendWhatsApp(formData) {
+362|  const message = `*New Order Received*%0a%0a` +
+363|    `👤 *Name:* ${formData.name}%0a` +
+364|    `📞 *Phone:* ${formData.phone}%0a` +
+365|    `💼 *Service:* ${formData.service}%0a` +
+366|    `📝 *Message:* ${formData.message || 'No message provided'}`;
+367|  
+368|  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+369|  window.open(url, '_blank');
+370|}
+371|
+372|// Handle form submission
+373|function handleSubmit(event) {
+374|  event.preventDefault();
+375|  hideAlert();
+376|  
+377|  // Get form data
+378|  const formData = {
+379|    name: document.getElementById('name').value,
+380|    phone: document.getElementById('phone').value,
+381|    service: document.getElementById('service').value,
+382|    message: document.getElementById('message').value
+383|  };
+384|  
+385|  // Validate form
+386|  if (!validateForm(formData)) {
+387|    return;
+388|  }
+389|  
+390|  // Show loading state
+391|  const submitBtn = document.getElementById('submitBtn');
+392|  const btnText = document.getElementById('btnText');
+393|  const spinner = document.getElementById('spinner');
+394|  
+395|  submitBtn.disabled = true;
+396|  btnText.style.display = 'none';
+397|  spinner.style.display = 'block';
+398|  
+399|  // Simulate sending (you can add actual API call here)
+400|  setTimeout(() => {
+401|    // Send to WhatsApp
+402|    sendWhatsApp(formData);
+403|    
+404|    // Show success message
+405|    showAlert('✅ Order submitted successfully! Redirecting to WhatsApp...', 'success');
+406|    
+407|    // Reset form
+408|    document.getElementById('orderForm').reset();
+409|    
+410|    // Reset button state
+411|    submitBtn.disabled = false;
+412|    btnText.style.display = 'inline';
+413|    spinner.style.display = 'none';
+414|  }, 1000);
+415|}
+416|
+417|// Add input event listeners for better UX
+418|document.getElementById('phone').addEventListener('input', function(e) {
+419|  // Only allow numbers
+420|  this.value = this.value.replace(/[^0-9]/g, '');
+421|});
+422|
+423|// Clear alerts on input
+424|const inputs = document.querySelectorAll('input, select, textarea');
+425|inputs.forEach(input => {
+426|  input.addEventListener('focus', hideAlert);
+427|});
+428|</script>
+429|
+430|</body>
+431|</html>
+[End of file]
