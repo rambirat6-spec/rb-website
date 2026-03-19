@@ -19,17 +19,28 @@ header {
     padding: 30px 20px;
 }
 
+header img {
+    width: 120px;
+    border-radius: 50%;
+    animation: spin 6s linear infinite;
+}
+
+header h1 {
+    margin: 10px 0 5px;
+    font-size: 28px;
+}
+
+header p {
+    opacity: 0.8;
+}
+
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
 
-header img {
-    animation: spin 6s linear infinite;
-}
-
 .slider {
     height: 200px;
-    background: url('https://picsum.photos/800/300') no-repeat center/cover;
+    background: url('https://picsum.photos/800/300?1') no-repeat center/cover;
     animation: slide 10s infinite;
 }
 
@@ -107,8 +118,8 @@ footer {
 <body>
 
 <header>
-    <!-- ✅ ONLINE WORKING LOGO -->
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="120">
+    <!-- ✅ WORKING LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
     <h1>RB Website Service</h1>
     <p>Apni Shop ko Online lekar jao 🚀</p>
 </header>
@@ -158,12 +169,15 @@ footer {
 <div class="section">
     <h2>Pay Now</h2>
 
-    <a class="btn" href="upi://pay?pa=YOUR-UPI-ID@upi&pn=RB Website&cu=INR">
+    <!-- ✅ UPI BUTTON (EDIT YOUR UPI ID) -->
+    <a class="btn" href="upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
         Pay via UPI
     </a>
 
     <br><br>
-    <img src="qr.png" width="150">
+
+    <!-- ✅ WORKING QR CODE -->
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=7082575384@upi&pn=RB Website&cu=INR">
 </div>
 
 <div class="section">
