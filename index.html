@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #0f172a;
+  background: linear-gradient(135deg,#0f172a,#020617);
   color: white;
 }
 
@@ -17,15 +17,9 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 15px;
-  background: #020617;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
 }
 
 .logo img {
@@ -45,31 +39,22 @@ header {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 28px;
-}
-
-.hero p {
-  color: #94a3b8;
+  font-size: 30px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
+  padding: 14px 25px;
   background: #22c55e;
   color: black;
+  border-radius: 12px;
   text-decoration: none;
-  border-radius: 10px;
+  margin-top: 20px;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #16a34a;
 }
 
 /* PRICE */
@@ -84,26 +69,35 @@ header {
 }
 
 .new {
-  font-size: 30px;
+  font-size: 32px;
   color: #22c55e;
 }
 
 /* FEATURES */
-.features {
+.features div {
+  background: rgba(255,255,255,0.05);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* REVIEWS */
+.reviews {
   padding: 20px;
 }
 
-.features div {
+.review-box {
   background: #020617;
   margin: 10px;
   padding: 15px;
   border-radius: 10px;
 }
 
-/* TRUST */
-.trust {
+/* TIMER */
+#timer {
   text-align: center;
-  padding: 30px;
+  font-size: 20px;
+  color: yellow;
 }
 
 /* WHATSAPP */
@@ -114,9 +108,8 @@ header {
   background: #22c55e;
   padding: 15px;
   border-radius: 50%;
-  text-decoration: none;
-  color: black;
   font-size: 20px;
+  text-decoration: none;
 }
 </style>
 
@@ -127,38 +120,62 @@ header {
 <header>
   <div class="logo">
     <img src="logo.png">
-    <h2>RB Web</h2>
   </div>
   <div class="phone">📞 7082575384</div>
 </header>
 
 <section class="hero">
-  <h1>🚀 Apni Shop Ke Liye Professional Website Banwaye</h1>
+  <h1>🔥 Apni Shop Ke Liye Professional Website Banwaye</h1>
   <p>Kiryana | Jewellery | Medical | Clothes | Mobile</p>
-  <a href="https://wa.me/917082575384" class="btn">Order Now on WhatsApp</a>
+  <a href="https://wa.me/917082575384?text=I want website" class="btn">
+    🚀 Get Website Now ₹2999
+  </a>
+</section>
+
+<section id="timer">
+⏳ Offer Ends in: <span id="countdown"></span>
 </section>
 
 <section class="price">
   <p class="old">₹3999</p>
   <p class="new">₹2999 🔥</p>
-  <p>Limited Time Offer</p>
 </section>
 
 <section class="features">
-  <div>✔ Mobile Friendly Website</div>
-  <div>✔ Fast Loading Speed</div>
-  <div>✔ WhatsApp Integration</div>
-  <div>✔ Payment System (UPI)</div>
+  <div>✔ Mobile Friendly</div>
+  <div>✔ Fast Loading</div>
+  <div>✔ WhatsApp Chat</div>
+  <div>✔ UPI Payment</div>
   <div>✔ Free Support</div>
 </section>
 
-<section class="trust">
-  <h2>👥 100+ Customers</h2>
-  <h3>⭐ 5 Star Rating</h3>
-  <p>📞 24/7 Support</p>
+<section class="reviews">
+  <h2>⭐ Customer Reviews</h2>
+  <div class="review-box">"Bahut acchi website banayi" – Ravi</div>
+  <div class="review-box">"Fast service 🔥" – Aman</div>
+  <div class="review-box">"Best in price 💯" – Suresh</div>
+</section>
+
+<section class="price">
+  <h3>💳 Pay via UPI</h3>
+  <p>7082575384@upi</p>
+  <p>Payment ke baad WhatsApp kare</p>
 </section>
 
 <a href="https://wa.me/917082575384" class="whatsapp">💬</a>
+
+<script>
+// TIMER
+var time = 86400;
+setInterval(function(){
+  var h = Math.floor(time/3600);
+  var m = Math.floor((time%3600)/60);
+  var s = time%60;
+  document.getElementById("countdown").innerHTML =
+    h+"h "+m+"m "+s+"s";
+  time--;
+},1000);
+</script>
 
 </body>
 </html>
