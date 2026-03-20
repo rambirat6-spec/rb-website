@@ -310,6 +310,42 @@ service-icon {
             </button>
         </div>
     </header>
+<!-- 🔥 IMAGE SLIDER -->
+
+<div class="slider">
+  <img id="slide" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+</div> 
+
+<style>
+.slider img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+</style>
+
+<script>
+let images = [
+  "https://source.unsplash.com/1600x900/?website",
+  "https://source.unsplash.com/1600x900/?coding",
+  "https://source.unsplash.com/1600x900/?business",
+  "https://source.unsplash.com/1600x900/?technology",
+  "https://source.unsplash.com/1600x900/?webdesign"
+];
+
+let i = 0;
+let slide = document.getElementById("slide");
+
+function changeImage() {
+  slide.src = images[i];
+  i = (i + 1) % images.length;
+}
+
+setInterval(changeImage, 2000);
+changeImage();
+</script>
+
     <section class="hero">
         <h1>
             Apni Shop Ko <span class="highlight">Online Lao</span>
