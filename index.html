@@ -1,193 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RB Web Service</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:sans-serif;
-}
-
-body{
-  color:white;
-  background:black;
-}
-
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.7);
-  position:fixed;
-  width:100%;
-  z-index:1000;
-}
-
-nav h2{
-  color:#00ff99;
-}
-
-nav a{
-  color:white;
-  margin-left:15px;
-  text-decoration:none;
-}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background-size:cover;
-  background-position:center;
-  transition:1s;
-}
-  
-.hero h1{
-  font-size:40px;
-}
-
-.hero span{
-  color:#00ff99;
-}
-
-.btn{
-  margin-top:20px;
-  padding:12px 25px;
-  border:none;
-  background:#00ff99;
-  color:black;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* SERVICES */
-.services{
-  padding:50px 20px;
-  text-align:center;
-}
-
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-
-.card{
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-  width:250px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:scale(1.05);
-}
-
-/* PRICING */
-.pricing{
-  padding:50px;
-  text-align:center;
-}
-
-.plan{
-  display:inline-block;
-  background:#111;
-  padding:30px;
-  margin:10px;
-  border-radius:10px;
-}
-
-.highlight{
-  border:2px solid #00ff99;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#000;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Web Service - Apni Shop Ko Online Lao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #eff6ff 100%);
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #7c3aed;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            background: #7c3aed;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #6d28d9;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: white;
+            color: #7c3aed;
+        }
+        .btn-secondary:hover {
+            background: #f3f4f6;
+        }
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .hero .highlight {
+            color: #7c3aed;
+        }
+        .hero .price {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .hero .price-amount {
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .hero-buttons .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        .services {
+            background: white;
+            padding: 5rem 2rem;
+        }
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .service-card.purple {
+            background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+        }
+        .service-card.green {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+        .service-card.blue {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        }
+service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .service-card.purple .service-icon {
+            background: #7c3aed;
+        }
+        .service-card.green .service-icon {
+            background: #16a34a;
+        }
+        .service-card.blue .service-icon {
+            background: #2563eb;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .service-card p {
+            color: #4b5563;
+        }
+        .pricing {
+            padding: 5rem 2rem;
+        }
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: #7c3aed;
+        }
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        .pricing-card li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pricing-card li::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        .pricing-card.featured li::before {
+            color: #86efac;
+        }
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        footer p {
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+        .footer-btn {
+            display: inline-flex;
+            margin: 1rem auto;
+        }
+        .copyright {
+            margin-top: 2rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .price {
+                font-size: 1.5rem;
+            }
+            .header-container {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 3rem 1rem;
+            }
+            .services, .pricing {
+                padding: 3rem 1rem;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="header-container">
+            <div class="logo">RB Web Service</div>
+            <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                📱 WhatsApp Karo
+            </button>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>
+            Apni Shop Ko <span class="highlight">Online Lao</span>
+        </h1>
+        <p class="price">
+            Sirf <span class="price-amount">₹2999</span> me professional website
+        </p>
+        <div class="hero-buttons">
+            <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                📱 WhatsApp Karo
+            </button>
+            <button class="btn btn-primary" onclick="scrollToPricing()">
+                Order Now
+            </button>
+        </div>
+    </section>
+    <section class="services">
+        <div class="services-container">
+            <h2 class="section-title">Hamari Services</h2>
+            <div class="services-grid">
+                <div class="service-card purple">
+                    <div class="service-icon">🛍️</div>
+                    <h3>Jewellery Website</h3>
+                    <p>Apne jewellery business ke liye stunning website</p>
+                </div>
+                <div class="service-card green">
+                    <div class="service-icon">🏪</div>
+                    <h3>Kirana Store</h3>
+                    <p>Apni kirana shop ko online le jaiye</p>
+                </div>
+                <div class="service-card blue">
+                    <div class="service-icon">👕</div>
+                    <h3>Clothing Shop</h3>
+                    <p>Apne kapde online bechiye</p>
+                </div>
+            </div>
+        </div>
+  
 
-<!-- NAVBAR -->
-<nav>
-  <h2>RB Web</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Pricing</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero" id="hero">
-  <div>
-    <h1>Apni Shop Ko <span>Online Lao</span></h1>
-    <p>Sirf ₹2999 me professional website</p>
-    
-    <button class="btn" onclick="whatsapp()">WhatsApp Karo</button>
-    <button class="btn" onclick="orderNow()">Order Now</button>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services">
-  <h2>Hamari Services</h2>
-  <div class="cards">
-    <div class="card">Jewellery Website</div>
-    <div class="card">Kirana Store</div>
-    <div class="card">Clothing Shop</div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing">
-  <h2>Pricing</h2>
-
-  <div class="plan">
-    <h3>Basic</h3>
-    <p>₹2999</p>
-  </div>
-
-  <div class="plan highlight">
-    <h3>Pro</h3>
-    <p>₹3999</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  📞 7082575384 | RB Web Service
-</footer>
-<script>
-let images = [
-  "https://images.unsplash.com/photo-1607083206968-13611e3d76db",
-  "https://images.unsplash.com/photo-1515169067865-5387ec356754",
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-];
-
-let i = 0;
-let hero = document.querySelector(".hero");
-
-setInterval(() => {
-  hero.style.backgroundImage = `url(${images[i]})`;
-  i = (i + 1) % images.length;
-}, 3000);
-</script>
+   <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <h2 class="section-title">Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">₹2999</div>
+                    <ul>
+                        <li>5 Pages Website</li>
+                        <li>Mobile Friendly</li>
+                        <li>WhatsApp Integration</li>
+                        <li>1 Year Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openWhatsApp()">Order Now</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">POPULAR</div>
+                    <h3>Pro</h3>
+                    <div class="price">₹3999</div>
+                    <ul>
+                        <li>10 Pages Website</li>
+                        <li>Mobile Friendly</li>
+                        <li>WhatsApp Integration</li>
+                        <li>Online Payment Setup</li>
+                        <li>SEO Optimization</li>
+                        <li>2 Year Support</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openWhatsApp()">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2>RB Web Service</h2>
+        <p>Apna business online le jaiye</p>
+        <button class="btn btn-whatsapp footer-btn" onclick="openWhatsApp()">
+            📱 Abhi WhatsApp Karo
+        </button>
+        <p class="copyright">© 2025 RB Web Service. All rights reserved.</p>
+    </footer>
+    <script>
+        function openWhatsApp() {
+            const phoneNumber = '919999999999';
+            const message = 'Namaste! Mujhe website chahiye';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        function scrollToPricing() {
+            document.getElementById('pricing').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
 </body>
 </html>
