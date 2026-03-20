@@ -41,7 +41,7 @@ nav a{
 
 /* HERO */
 .hero{
-  height:100vh;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -50,7 +50,7 @@ nav a{
   background-position:center;
   transition:1s;
 }
-
+  
 .hero h1{
   font-size:40px;
 }
@@ -174,37 +174,20 @@ footer{
 <footer>
   📞 7082575384 | RB Web Service
 </footer>
-
 <script>
-
-/* BACKGROUND SLIDER */
 let images = [
-  "https://images.unsplash.com/photo-1556745757-8d76bdb6984b",
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-  "https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+  "https://images.unsplash.com/photo-1607083206968-13611e3d76db",
+  "https://images.unsplash.com/photo-1515169067865-5387ec356754",
+  "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
 ];
 
 let i = 0;
+let hero = document.querySelector(".hero");
 
-function changeBg(){
-  document.getElementById("hero").style.backgroundImage =
-  "url(" + images[i] + ")";
-  i = (i+1) % images.length;
-}
-
-setInterval(changeBg, 3000);
-changeBg();
-
-/* BUTTONS */
-function whatsapp(){
-  window.open("https://wa.me/917082575384","_blank");
-}
-
-function orderNow(){
-  alert("Order system coming soon 🚀");
-}
-
+setInterval(() => {
+  hero.style.backgroundImage = `url(${images[i]})`;
+  i = (i + 1) % images.length;
+}, 3000);
 </script>
-
 </body>
 </html>
