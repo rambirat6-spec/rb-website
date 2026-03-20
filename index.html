@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RB Web Service</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+/* ANIMATED BACKGROUND */
+body{
+  color:white;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #0f172a);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 10%;
+  flex-wrap:wrap;
+}
+
+.hero h1{
+  font-size:38px;
+}
+
+.hero span{
+  color:#22c55e;
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 20px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  gap:20px;
+  padding:40px 10%;
+  flex-wrap:wrap;
+}
+
+.card{
+  flex:1;
+  min-width:250px;
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* PRICING */
+.pricing{
+  text-align:center;
+  padding:40px;
+}
+
+.plan{
+  display:inline-block;
+  margin:20px;
+  padding:25px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+}
+
+.footer{
+  text-align:center;
+  padding:20px;
+  background:black;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>RB Web Service</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Pricing</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Apni Shop Ko <span>Online Lao</span></h1>
+    <p>Sirf ₹2999 me professional website</p>
+    <button class="btn" onclick="openWhatsApp()">WhatsApp Karo</button>
+  </div>
+
+  <img src="https://via.placeholder.com/300" width="300">
+</section>
+
+<!-- SERVICES -->
+<section class="cards">
+  <div class="card">Jewellery Website</div>
+  <div class="card">Kirana Store</div>
+  <div class="card">Clothing Shop</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h1>Pricing</h1>
+
+  <div class="plan">
+    <h2>Basic</h2>
+    <p>₹2999</p>
+  </div>
+
+  <div class="plan">
+    <h2>Pro</h2>
+    <p>₹3999</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  📞 7082575384 | RB Web Service
+</div>
+
+<script>
+function openWhatsApp(){
+  window.open("https://wa.me/917082575384","_blank");
+}
+
+/* Auto welcome popup */
+window.onload = function(){
+  setTimeout(()=>{
+    alert("Welcome to RB Web Service 🚀");
+  },1500);
+}
+</script>
+
+</body>
+</html>
