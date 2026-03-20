@@ -313,8 +313,9 @@ service-icon {
 <!-- 🔥 IMAGE SLIDER -->
 
 <div class="slider">
-<img id="slide" src="https://picsum.photos/800/400">
-</div> 
+  <img id="slide"
+src="https://picsum.photos/800/400">
+</div>
 
 <style>
 .slider img {
@@ -335,7 +336,9 @@ let images = [
 ];
 
 let i = 0;
-let slide = document.getElementById("slide");
+let slide = 
+document.getElementById("slide");
+slide.src = images[0];
 
 function changeImage() {
   slide.src = images[i];
