@@ -11,10 +11,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  font-family: 'Segoe UI', sans-serif;
+  
+  /* 🔥 NEW ANIMATED BACKGROUND */
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #022c22, #064e3b);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+
   min-height: 100vh;
   padding: 20px;
   color: white;
@@ -210,7 +214,11 @@ button:disabled {
     transform: translateY(0);
   }
 }
-
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -230,17 +238,15 @@ button:disabled {
   .form-card {
     padding: 24px;
   }
-  
+
   body {
-    padding: 10px;
-  }
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+  background: #0f172a;
 }
 
-.service-price {
-  color: #22c55e;
-  font-weight: bold;
-}
-</style>
 </head>
 
 <body>
