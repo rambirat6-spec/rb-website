@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RB Web Service</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: linear-gradient(45deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+/* Navbar */
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  background:rgba(0,0,0,0.6);
+}
+
+.logo {
+  font-size:22px;
+  font-weight:bold;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Hero */
+.hero {
+  text-align:center;
+  padding:80px 20px;
+}
+
+.btn {
+  background:#00ffcc;
+  padding:12px 25px;
+  border-radius:25px;
+  color:black;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:15px;
+}
+
+/* Services */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card {
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+
+/* Pricing */
+.pricing {
+  text-align:center;
+  padding:20px;
+}
+
+.price-box {
+  display:inline-block;
+  background:#111;
+  padding:20px;
+  margin:10px;
+  border-radius:10px;
+}
+
+/* Footer */
+footer {
+  text-align:center;
+  padding:20px;
+  background:#000;
+}
+
+/* WhatsApp */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:green;
+  padding:15px;
+  border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">RB</div>
+  <div>📞 7082575384</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>🚀 RB Web Service</h1>
+  <p>Har type ki shop ke liye website banwaye</p>
+  <a class="btn" href="https://wa.me/917082575384">Order Now</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="card">🛒 Kiryana Store</div>
+  <div class="card">💊 Medical Shop</div>
+  <div class="card">🍔 Restaurant</div>
+  <div class="card">👗 Clothes Shop</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h2>💰 Pricing</h2>
+  <div class="price-box">
+    <h3>Basic</h3>
+    <p>₹2999</p>
+  </div>
+  <div class="price-box">
+    <h3>Premium</h3>
+    <p>₹3999</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pricing">
+  <h2>📞 Contact</h2>
+  <p>7082575384</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>RB Web Service</h3>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917082575384" class="whatsapp">💬</a>
+
+</body>
+</html>
