@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RB Web Service</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+body{
+  color:white;
+  background:black;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.7);
+  position:fixed;
+  width:100%;
+  z-index:1000;
+}
+
+nav h2{
+  color:#00ff99;
+}
+
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+  transition:1s;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+.hero span{
+  color:#00ff99;
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  background:#00ff99;
+  color:black;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* SERVICES */
+.services{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  width:250px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+/* PRICING */
+.pricing{
+  padding:50px;
+  text-align:center;
+}
+
+.plan{
+  display:inline-block;
+  background:#111;
+  padding:30px;
+  margin:10px;
+  border-radius:10px;
+}
+
+.highlight{
+  border:2px solid #00ff99;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>RB Web</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Pricing</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div>
+    <h1>Apni Shop Ko <span>Online Lao</span></h1>
+    <p>Sirf ₹2999 me professional website</p>
+    
+    <button class="btn" onclick="whatsapp()">WhatsApp Karo</button>
+    <button class="btn" onclick="orderNow()">Order Now</button>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <h2>Hamari Services</h2>
+  <div class="cards">
+    <div class="card">Jewellery Website</div>
+    <div class="card">Kirana Store</div>
+    <div class="card">Clothing Shop</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h2>Pricing</h2>
+
+  <div class="plan">
+    <h3>Basic</h3>
+    <p>₹2999</p>
+  </div>
+
+  <div class="plan highlight">
+    <h3>Pro</h3>
+    <p>₹3999</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  📞 7082575384 | RB Web Service
+</footer>
+
+<script>
+
+/* BACKGROUND SLIDER */
+let images = [
+  "https://images.unsplash.com/photo-1556745757-8d76bdb6984b",
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+  "https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+];
+
+let i = 0;
+
+function changeBg(){
+  document.getElementById("hero").style.backgroundImage =
+  "url(" + images[i] + ")";
+  i = (i+1) % images.length;
+}
+
+setInterval(changeBg, 3000);
+changeBg();
+
+/* BUTTONS */
+function whatsapp(){
+  window.open("https://wa.me/917082575384","_blank");
+}
+
+function orderNow(){
+  alert("Order system coming soon 🚀");
+}
+
+</script>
+
+</body>
+</html>
